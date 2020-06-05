@@ -1,0 +1,7 @@
+.whiteCol{
+    background-color: white;  
+}
+
+.whiteCol:hover{
+    background-color:#D7DBDD;
+}
