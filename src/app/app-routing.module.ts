@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ViewSlamsComponent } from './components/view-slams/view-slams.component';
 import { WriteSlamComponent } from './components/write-slam/write-slam.component';
+import { AuthGuard } from "src/app/auth.guard";
+
 const routes: Routes = [
   {
     path:'',component:LoginComponent,
   },
   {
-    path:'view/:id',component:ViewSlamsComponent
+    path:'view/:id',component:ViewSlamsComponent,canActivate:[AuthGuard]
   },
  {
    path:'write',component:WriteSlamComponent

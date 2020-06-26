@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         this.validationObject=JSON.parse(this.cookieService.get('vcookie'))
         console.log(this.validationObject)
         this.viewPageUrl='/view/'+this.validationObject.userid
+        this.loginService.isAuthenicated=true
         this.router.navigate([this.viewPageUrl])
         },
         (err)=>{
@@ -54,6 +55,7 @@ export class LoginComponent implements OnInit {
         this.validationObject=JSON.parse(this.cookieService.get('vcookie'))
         console.log(this.validationObject)
         this.viewPageUrl='/view/'+this.validationObject.userid
+        this.loginService.isAuthenicated=true
         this.router.navigate([this.viewPageUrl])
       }
     });
