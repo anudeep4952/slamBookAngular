@@ -1,1 +1,79 @@
-<p>write-slam works!</p>
+
+<div *ngIf="flag==true" ><div class="col-sm-6" style="background-color:cyan;">
+<form [formGroup]="slamForm" ngsubmit="postSlam()">
+  <label>1. My number in your contacts is saved as: </label><br>
+  <input type="text" class="form-control" formControlName="que1" placeholder="your answer"
+  [class.is-invalid]="slamForm.get('que1').invalid&&slamForm.get('que1').touched">
+  <small *ngIf="slamForm.get('que1').errors?.required" [class.d-none]="slamForm.get('que1').valid||slamForm.get('que1').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>2. The best moment with me till date: </label><br>
+      <input type="text" class="form-control" formControlName="que2" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que2').invalid&&slamForm.get('que2').touched">
+      <small *ngIf="slamForm.get('que2').errors?.required" [class.d-none]="slamForm.get('que2').valid||slamForm.get('que2').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>3. Any of your secrets, which I don't know till date: </label><br>
+      <input type="text" class="form-control" formControlName="que3" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que3').invalid&&slamForm.get('que3').touched">
+      <small *ngIf="slamForm.get('que3').errors?.required" [class.d-none]="slamForm.get('que3').valid||slamForm.get('que3').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>4. Moment you were so angry with me that you wanted to kill me: </label><br>
+      <input type="text" class="form-control" formControlName="que4" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que4').invalid&&slamForm.get('que4').touched">
+      <small *ngIf="slamForm.get('que4').errors?.required" [class.d-none]="slamForm.get('que4').valid||slamForm.get('que4').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>5. One thing you had FUN out of doing something WRONG: </label><br>
+      <input type="text" class="form-control" formControlName="que5" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que5').invalid&&slamForm.get('que5').touched">
+      <small *ngIf="slamForm.get('que5').errors?.required" [class.d-none]="slamForm.get('que5').valid||slamForm.get('que5').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>6. One line about me: </label><br>
+      <input type="text" class="form-control" formControlName="que6" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que6').invalid&&slamForm.get('que6').touched">
+      <small *ngIf="slamForm.get('que6').errors?.required" [class.d-none]="slamForm.get('que6').valid||slamForm.get('que6').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>7. How do we usually spend time together: </label><br>
+      <input type="text" class="form-control" formControlName="que7" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que7').invalid&&slamForm.get('que7').touched">
+      <small *ngIf="slamForm.get('que7').errors?.required" [class.d-none]="slamForm.get('que7').valid||slamForm.get('que7').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>8. It would have been better if I were in some other way, what can it be?: </label><br>
+      <input type="text" class="form-control" formControlName="que8" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que8').invalid&&slamForm.get('que8').touched">
+      <small *ngIf="slamForm.get('que8').errors?.required" [class.d-none]="slamForm.get('que8').valid||slamForm.get('que8').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>9. I'm good at: </label><br>
+      <input type="text" class="form-control" formControlName="que9" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que9').invalid&&slamForm.get('que9').touched">
+      <small *ngIf="slamForm.get('que9').errors?.required" [class.d-none]="slamForm.get('que9').valid||slamForm.get('que9').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>10. I'm bad at: </label><br>
+      <input type="text" class="form-control" formControlName="que10" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que10').invalid&&slamForm.get('que10').touched">
+      <small *ngIf="slamForm.get('que10').errors?.required" [class.d-none]="slamForm.get('que10').valid||slamForm.get('que10').untouched"
+      class="text-danger">{{id}} wants your answer to this! </small>
+      <br>
+      <label>11. One thing you really want in your life: </label><br>
+      <input type="text" class="form-control" formControlName="que11" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que11').invalid&&slamForm.get('que11').touched">
+      <small *ngIf="slamForm.get('que11').errors?.required" [class.d-none]="slamForm.get('que11').valid||slamForm.get('que11').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+      <label>12. What is the first thing that comes into your mind when my name pops up somewhere?: </label><br>
+      <input type="text" class="form-control" formControlName="que12" placeholder="your answer"
+      [class.is-invalid]="slamForm.get('que12').invalid&&slamForm.get('que12').touched">
+      <small *ngIf="slamForm.get('que12').errors?.required" [class.d-none]="slamForm.get('que12').valid||slamForm.get('que12').untouched"
+            class="text-danger">{{id}} wants your answer to this! </small>
+            <br>
+  <button  (click)="postSlam()" >submit my answers</button>
+  </form>
+</div>
+</div>

@@ -1,2 +1,67 @@
-<p>view-slams works!</p>
-<h1>{{id}}</h1>
+
+<h3 style="color:yellow">{{id}}</h3><br><br>
+
+<div *ngIf="slams" >
+<div *ngFor="let p of slams">
+  <p style="color:yellow" data-toggle="modal" data-target="#testModal" (click)="showSlam(p)" >{{p.friendName}}</p>
+  <button title="Delete"  class="btn btn-danger " (click)="deleteSlam(p)">
+    delete
+</button>
+ </div>
+ </div>
+
+<div class="modal" id="testModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h2 class="modal-title"> {{sm.friendName}} has answered! </h2>
+
+      </div>
+
+      <!-- Modal body -->
+
+      <label>1. My number in your contacts is saved as: {{sm.que1}}</label>
+      <label>2. The best moment with me till date: {{sm.que2}}</label>
+      <label>3. Any of your secrets, which I don't know till date: {{sm.que3}}</label>
+      <label>4. Moment you were so angry with me that you wanted to kill me: {{sm.que4}}</label>
+      <label>5. Something you had FUN out of doing something WRONG: {{sm.que5}}</label>
+      <label>6. One line about me: {{sm.que6}}</label>
+      <label>7. How do we usually spend time together: {{sm.que7}}</label>
+      <label>8. It would have been better if I were in some other way, what can it be?: {{sm.que8}}</label>
+      <label>9. I'm good at: {{sm.que9}}</label>
+      <label>10. I'm bad at: {{sm.que10}}</label>
+      <label>11. Something you really want in your life: {{sm.que11}}</label>
+      <label>12. What is the first thing that comes into your mind when my name pops up somewhere?: {{sm.que12}}</label>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<br><br>
+<form [formGroup]="linkForm" ngsubmit="getLink()">
+<div>
+  <label style="color:yellow"> Your Friend Name: </label>
+<input type="text" class="form-control" formControlName="fName" placeholder="to whom you want to share the slam "
+[class.is-invalid]="linkForm.get('fName').invalid&&linkForm.get('fName').touched">
+ <small *ngIf="linkForm.get('fName').errors?.required" [class.d-none]="linkForm.get('fName').valid||linkForm.get('fName').untouched"
+            class="text-danger">Hey! Name of your friend can't be empty </small></div>
+            <br><br>
+<button  (click)="getLink()" >get link to share</button>
+</form>
+
+
+<p style="color:yellow">{{linkm1.link}}</p>
+<button  (click)="copyLink(linkm1.link)">copy this link</button>
+

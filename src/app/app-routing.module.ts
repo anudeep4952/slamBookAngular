@@ -11,11 +11,11 @@ const routes: Routes = [
     path:'view/:id',component:ViewSlamsComponent
   },
  {
-   path:'write',component:WriteSlamComponent
+   path:'writemyslam/:id/:friendName/:linkId',component:WriteSlamComponent
  },
  { path: '**', redirectTo:'' }
 ];
-
+//
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -8,11 +8,10 @@ import { WriteSlamComponent } from './components/write-slam/write-slam.component
 import { SocialLoginModule, AuthServiceConfig, LoginOpt } from "angularx-social-login";
 import { GoogleLoginProvider } from "angularx-social-login";
 import { HttpClientModule } from '@angular/common/http';
-
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 const googleLoginOptions: LoginOpt = {
   scope: 'profile email'
-}; 
+};
 
 let config = new AuthServiceConfig([
   {
@@ -37,10 +36,13 @@ export function provideConfig() {
     AppRoutingModule,
     SocialLoginModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: AuthServiceConfig,
-      useFactory: provideConfig
+      useFactory: provideConfig,
+
   }],
   bootstrap: [AppComponent]
 })
