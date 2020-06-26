@@ -9,6 +9,8 @@ export class LoginServiceService {
 
   constructor(private http: HttpClient) { }
 
+  isAuthenicated:boolean=false
+
   hostserver:string="http://localhost:8081" ;
   verifyUrl=this.hostserver+"/login"
 
